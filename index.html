@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    <body>
+        <div class="heading"><i class="blue fas fa-tasks"> My </i> To-Do List</div>
+        <form onsubmit="return false">
+            Task
+            <input type="text" placeholder="Description of task" name="task" class="text">
+            Deadline
+            <input type="text" placeholder="Date,time till valid" name="deadline" class="text">
+            Duration
+            <input type="number" placeholder="Duration" name="duration" class="text">
+            <input type="submit" class="submit" value="Add Task">
+        </form>
+        <div class="message">Please fill</div>
+        <br><br>
+        <div class="filter">
+            <input type="text" name="filterText" placeholder="Enter Task That U Want To Search For " class="search">
+            <input type="number" name="filterDuration" class="search" placeholder="Max Duration">
+            <input type="submit" class="submit" value="Search">
+            <i class="refresh fas fa-sync-alt"></i>
+        </div>
+        <div class="list">
+            <div class="item">
+                <div class="info"><b>Task</b></div>
+                <div class="info"><b>Deadline</b></div>
+                <div class="info"><b>Duration</b></div>
+                <div class="close"></div>
+            </div>
+            <div class="item">
+                <div class="info"><b>Task</b></div>
+                <div class="info"><b>Deadline</b></div>
+                <div class="info"><b>1</b></div>
+                <div class="close"></div>
+            </div>
+            <div class="item">
+                <div class="info"><b>Task</b></div>
+                <div class="info"><b>Deadline</b></div>
+                <div class="info"><b>2</b></div>
+                <div class="close"></div>
+            </div>
+            <div class="item">
+                <div class="info"><b>Task</b></div>
+                <div class="info"><b>Deadline</b></div>
+                <div class="info"><b>3</b></div>
+                <div class="close"></div>
+            </div>
+        </div>
+    </body>
+<script src="app.js"></script>
+</html>

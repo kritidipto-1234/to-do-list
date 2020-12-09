@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.heading
+{
+    text-align: center;
+    font-size: 70px;
+    margin:30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width:80vw;
+    margin: auto;
+}
+
+input{
+    padding:0px 10px;
+    margin-top:8px;
+    margin-bottom: 20px;
+    height:35px;
+    border-radius: 0px;
+    border: 1px solid rgb(214, 214, 214);
+}
+.blue
+{
+    color: #008CBA;
+}
+.submit
+{
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.submit:hover{
+    background-color: #006e93;
+}
+input:focus
+{
+    outline:3px solid  #008CBA;
+}
+.list
+{
+    width: 80vw;
+    margin: auto;
+}
+.item
+{
+    width:100%;
+    min-height:50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.info{
+    max-width:28%;
+    flex:1;
+    line-height:25px;
+}
+.info:first-child
+{
+    margin-left:10px;
+}
+.close
+{
+    margin:0px 15px;
+    background-color:rgb(223, 56, 56) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:35px;
+    width:29px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.close::after{
+    content: 'X';
+}
+.close:hover{
+    background-color: maroon;
+}
+
+
+.item:nth-child(2n)
+{
+    background-color: #F2F2F2;
+}
+
+.message
+{
+    color: white;
+    background-color: #F04124;
+    width:80vw;
+    margin: auto;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter
+{
+    width:80vw;
+    margin: auto;
+}
+.filter .search
+{
+    width:42%;
+    margin:0px 10px;
+}
+.filter .search:focus
+{
+    outline: none;
+}
+.search:nth-child(2){
+    width:20%;
+}
+.filter .submit{
+    width:15%;
+}
+
+.filter i{
+    color: #3288a0;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left:15px;
+    transform: translateY(5px);
+    transition: all 0.3s;
+}
+.filter>i:hover{
+    color: #075d79;
+    transform: scale(1.1);
+}
