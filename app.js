@@ -6,7 +6,11 @@ message.style.display="none";
 let filterTask=document.querySelector("input[name='filterText']");
 let filterDuration=document.querySelector("input[name='filterDuration']");
 let refreshBTN=document.querySelector('.refresh');
-
+let globalarrayoftimers=[]//to contain all the timers;
+function removeallprevtimers()
+{
+    globalarrayoftimers.forEach(e=>clearInterval(e));
+}
 function removetask(element)
 {
     element.srcElement.parentElement.remove();
@@ -14,13 +18,17 @@ function removetask(element)
     message.textContent="Task Removed!";
     message.style.backgroundColor='#F04124';
     message.style.display="flex";
-    setTimeout(function(){message.style.display="none";}, 3000);
+    removeallprevtimers();
+    const a=setTimeout(function(){message.style.display="none";}, 3000);
+    globalarrayoftimers.push(a);
 }
 
 function addtask()
 {
     message.style.display="flex";
-    setTimeout(function(){message.style.display="none";}, 3000);
+    removeallprevtimers();
+    const a=setTimeout(function(){message.style.display="none";}, 3000);
+    globalarrayoftimers.push(a);
 
     let taskvalue=document.querySelector("input[name='task']").value;
     let deadlinevalue=document.querySelector("input[name='deadline']").value;
@@ -75,7 +83,9 @@ function search()
         message.style.display="flex";
         message.style.backgroundColor='#F04124';
         message.textContent='Fill in atleast one field for searching!';
-        setTimeout(function(){message.style.display="none";}, 3000);
+        removeallprevtimers();
+        const a=setTimeout(function(){message.style.display="none";}, 3000);
+        globalarrayoftimers.push(a);
         return;
     }
     if(filterDuration.value)
