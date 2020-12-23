@@ -7,10 +7,12 @@ let filterTask=document.querySelector("input[name='filterText']");
 let filterDuration=document.querySelector("input[name='filterDuration']");
 let refreshBTN=document.querySelector('.refresh');
 let globalarrayoftimers=[]//to contain all the timers;
+
 function removeallprevtimers()
 {
     globalarrayoftimers.forEach(e=>clearInterval(e));
 }
+
 function removetask(element)
 {
     element.srcElement.parentElement.remove();
