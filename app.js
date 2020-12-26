@@ -6,6 +6,7 @@ message.style.display="none";
 let filterTask=document.querySelector("input[name='filterText']");
 let filterDuration=document.querySelector("input[name='filterDuration']");
 let refreshBTN=document.querySelector('.refresh');
+let list=document.querySelector('.list');
 let globalarrayoftimers=[]//to contain all the timers;
 
 function removeallprevtimers()
@@ -13,9 +14,22 @@ function removeallprevtimers()
     globalarrayoftimers.forEach(e=>clearInterval(e));
 }
 
-function removetask(element)
+// function removetask(element)
+// {
+//     element.srcElement.parentElement.remove();
+//     let message=document.querySelector('.message');
+//     message.textContent="Task Removed!";
+//     message.style.backgroundColor='#F04124';
+//     message.style.display="flex";
+//     removeallprevtimers();
+//     const a=setTimeout(function(){message.style.display="none";}, 3000);
+//     globalarrayoftimers.push(a);
+// }
+function removetask(e)
 {
-    element.srcElement.parentElement.remove();
+    if (!e.target.classList.contains('close'))
+        return;
+    e.target.parentElement.remove();
     let message=document.querySelector('.message');
     message.textContent="Task Removed!";
     message.style.backgroundColor='#F04124';
@@ -24,6 +38,7 @@ function removetask(element)
     const a=setTimeout(function(){message.style.display="none";}, 3000);
     globalarrayoftimers.push(a);
 }
+
 
 function addtask()
 {
@@ -71,10 +86,11 @@ function addtask()
     message.textContent='Successfully added new task to list !'
     message.style.backgroundColor='Green';
 
-    document.querySelectorAll('.close').forEach(item=> item.addEventListener('click',removetask));
+    //i dont need to explicitly add event listener to all the added crosses ,event delegation on crosses done
+    //document.querySelectorAll('.close').forEach(item=> item.addEventListener('click',removetask));
 }
 
-document.querySelectorAll('.close').forEach(item=> item.addEventListener('click',removetask));
+list.addEventListener('click',removetask);
 
 
 
